@@ -24,11 +24,11 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const assertArraysEqual = function(arr1, arr2) {
-
+  
   if (eqArrays(arr1, arr2)) {
-    console.log(`this array comparason is false`);
+    console.log(`✅✅✅ Assertion passed: Arrays are equal`);
   } else {
-    console.log(`this array comparason is true`);
+    console.log(`🛑🛑🛑 Assertion failed: Arrays are not equal`);
   }
 };
 
@@ -37,4 +37,3 @@ assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
