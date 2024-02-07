@@ -26,6 +26,10 @@ const assertArraysEqual = function(actual, expected) {
 
 const middle = function(arr) {
 
+  if (arr.length < 3) {
+    return [];
+  }
+
   const middleObj = [];
   const midIndex = Math.floor(arr.length / 2);
 
@@ -44,11 +48,8 @@ const middle = function(arr) {
 
 
 // Test cases
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [3, 2, 1]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => [2, 3]
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => [3, 4]
+assertArraysEqual(middle([1]), []); // => []
 assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
