@@ -21,5 +21,10 @@ describe('#middle', () => {
     assert.deepEqual(middle(testArr3), [2]);
   });
 
-  
+  it("makes sure the array is unaltered, meaning still has 4 elements", () => {
+
+    assert.deepEqual(testArr2.length, 4);
+  });
+
+
 });
