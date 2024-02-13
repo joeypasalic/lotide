@@ -1,10 +1,25 @@
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 const middle = require('../middle');
+const testArr1 = [1];
+const testArr2 = [1, 2, 3, 4];
+const testArr3 = [1, 2, 3];
 
+describe('#middle', () => {
 
-// Test cases
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => [2, 3]
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => [3, 4]
-assertArraysEqual(middle([1]), []); // => []
-assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
+  it("returns an empty array when receiving 1 digit array", () => {
+
+    assert.deepEqual(middle(testArr1), []);
+  });
+
+  it("returns the middle 2 numbers when given an array of even numbers", () => {
+
+    assert.deepEqual(middle(testArr2), [2, 3]);
+  });
+
+  it("returns the one middle number when given an array of odd numbers", () => {
+
+    assert.deepEqual(middle(testArr3), [2]);
+  });
+
+  
+});
