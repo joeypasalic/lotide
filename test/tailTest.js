@@ -8,12 +8,12 @@ describe('#tail', () => {
 
   it("returns an empty array when given an empty array", () => {
 
-    assert.deepEqual(tail(low.length), []);
+    assert.deepEqual(tail(low), []);
   });
 
   it("returns an empty array when given a one word array", () => {
 
-    assert.deepEqual(tail(single.length), []);
+    assert.deepEqual(tail(single), []);
   });
 
   it("returns the second element of argument array as the first", () => {
