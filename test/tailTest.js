@@ -1,19 +1,32 @@
+const assert = require('chai').assert;
 const tail = require('../tail.js');
-const assertEqual = require('../assertEqual.js');
-
-
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 const low = [];
 const single = ["Hey"];
 
+describe('#tail', () => {
 
-assertEqual(tail(low).length, 0);
-assertEqual(tail(single).length, 0);
+  it("returns an empty array when given an empty array", () => {
+
+    assert.deepEqual(tail(low.length), []);
+  });
+
+  it("returns an empty array when given a one word array", () => {
+
+    assert.deepEqual(tail(single.length), []);
+  });
+
+  it("returns the second element of argument array as the first", () => {
+    assert.deepEqual(tail(words)[0], "Lighthouse");
+  });
+
+  it("returns the third element of argument array as the second", () => {
+    assert.deepEqual(tail(words)[1], "Labs");
+  });
+
+  it("makes sure the original array still has 3 elements", () => {
+    assert.equal(words.length, 3);
+  });
 
 
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual(words.length, 3); // original array should still have 3 elements!
-assertEqual(tail(words)[0], "Lighthouse"); // first element of returned array should be second element of argument array
-assertEqual(tail(words)[1], "Labs");
+});
