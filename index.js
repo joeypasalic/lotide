@@ -13,6 +13,7 @@ const findKeyByValue = require('./findKeyByValue');
 const letterPositions = require('./letterPositions');
 const takeUntil = require('./takeUntil');
 const without = require('./without');
+//flatten is a stretch function and was not impelmented in my code for that reason
 
 
 module.exports = {
@@ -30,5 +31,5 @@ module.exports = {
   findKeyByValue: findKeyByValue,
   letterPositions: letterPositions,
   takeUntil: takeUntil,
-  without: without
+  without: without,
 };
